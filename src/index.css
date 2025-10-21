@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Nossas cores personalizadas */
+        --background: 0 0% 94%;
+        --cream: 45 30% 95%;
+        --burgundy: 332 96% 17%; /* Bordô */
+        --wine: 345 65% 35%;
+        --wine-light: 345 45% 55%;
+
+        /* LIQUID GLASS */
+        --glass-bg: rgba(25, 25, 25, 0.35);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+        --glass-blur: blur(20px);
+    }
+    body {
+        @apply bg-black text-white;
+        font-family: "Lato", sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Playfair Display", serif;
+    }
+}
+
+@layer utilities {
+    .glass {
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+    }
+    .text-shadow {
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+}
