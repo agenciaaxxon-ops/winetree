@@ -27,12 +27,12 @@ const LoginPage = () => {
                 throw signInError;
             }
 
-            // Se o login for bem-sucedido, redireciona para /admin
-            window.location.href = '/admin'; // Ou use useNavigate() se preferir
+            // Redireciona para /admin após login bem-sucedido
+            window.location.href = '/admin';
 
         } catch (err: any) {
             console.error("Erro no login:", err);
-            setError("Email ou senha inválidos."); // Mensagem genérica por segurança
+            setError("Email ou senha inválidos.");
         } finally {
             setLoading(false);
         }
@@ -45,9 +45,12 @@ const LoginPage = () => {
         >
             <div className="absolute inset-0 bg-black/80 z-0" />
 
-            <div className="relative z-10 flex flex-col items-center w-full max-w-sm">
+            {/* LARGURA DO CONTÊINER AJUSTADA */}
+            <div className="relative z-10 flex flex-col items-center w-full max-w-xs sm:max-w-sm">
+                {/* Logo Responsivo */}
                 <div className="mb-8 animate-fade-in-up">
-                    <img src={logo} alt="Wine Cup Logo" className="h-16 w-auto drop-shadow-lg" />
+                    {/* Tamanho ajustado: h-12 no mobile, md:h-16 no desktop */}
+                    <img src={logo} alt="Wine Cup Logo" className="h-12 md:h-16 w-auto drop-shadow-lg" />
                 </div>
 
                 <div className="w-full glass rounded-3xl p-8 animate-fade-in-up animation-delay-200">
